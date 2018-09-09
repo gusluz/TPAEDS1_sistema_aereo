@@ -1,9 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 typedef struct {
     int vid;
-    char hrDecolagem[5], hrPrevPouso[5], aeroportoDecolagem[5], aeroportoPrevPouso[5];
+    char hrDecolagem[6], hrPrevPouso[6], aeroportoDecolagem[6], aeroportoPrevPouso[6];
     int pistaDecolagem;
 } tadVoo;
 
@@ -20,5 +17,4 @@ char* getAeroportoPrevPouso(tadVoo* voo);
 int setAeroportoPrevPouso(tadVoo* voo, char aeroportoPrevPouso[]);
 int getPistaDecolagem(tadVoo* voo);
 int setPistaDecolagem(tadVoo* voo, int pistaDecolagem);
-
-
+int horasParaMinutos(char *horario);
