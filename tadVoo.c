@@ -4,7 +4,7 @@
 
 void inicializa(tadVoo* voo){
     voo->vid = 0;
-    char stringNull[5];
+    char stringNull[6];
     stringNull[0] = '\0';
     strcpy(voo->hrDecolagem, stringNull);
     strcpy(voo->hrPrevPouso, stringNull);
@@ -12,6 +12,7 @@ void inicializa(tadVoo* voo){
     strcpy(voo->aeroportoPrevPouso, stringNull);
     voo->pistaDecolagem = 0;
 }
+
 int getVid(tadVoo* voo){
     return voo->vid;
 }

@@ -17,4 +17,3 @@ char* getAeroportoPrevPouso(tadVoo* voo);
 int setAeroportoPrevPouso(tadVoo* voo, char aeroportoPrevPouso[]);
 int getPistaDecolagem(tadVoo* voo);
 int setPistaDecolagem(tadVoo* voo, int pistaDecolagem);
-int horasParaMinutos(char horario[]);
