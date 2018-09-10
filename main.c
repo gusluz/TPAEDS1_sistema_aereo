@@ -5,30 +5,45 @@
 #include "tadListaDeVoo.c"
 
 int main() {
-    tadVoo voo, *voo1 = NULL;
-    tadListaVoo listaVoo, *plistaVoo = NULL;
-    voo1 = &voo;
-    plistaVoo = &listaVoo;
-    char horaD[5];
-    char horaP[5];
-    inicializa(voo1);
-    printf("VID: %d\n", getVid(voo1));
-    printf("HD: %s\n", getHrDecolagem(voo1));
-    printf("HP: %s\n", getHrPrevPouso(voo1));
-    printf("AD: %s\n", getAeroportoDecolagem(voo1));
-    printf("AP: %s\n", getAeroportoPrevPouso(voo1));
-    printf("Pista: %d\n", getPistaDecolagem(voo1));
+    tadVoo voo1, voo2, voo3, retorno;
+    tadListaVoo listaVoo;
+    int erro1, erro2, erro3;
+    inicializa(&voo1);
+    inicializa(&voo2);
+    inicializa(&voo3);
     fazListaVazia(&listaVoo);
     if(vazia(listaVoo)) printf("Lista Vazia!\n");
-    setVid(voo1, rand());
-    setHrDecolagem(voo1, "13:30\0");
-    setHrPrevPouso(voo1, "15:30\0");
-    setAeroportoDecolagem(voo1, "AEP\0");
-    setAeroportoPrevPouso(voo1, "PEA\0");
-    setPistaDecolagem(voo1, 1);
-    if(!insereVoo(voo, &listaVoo)){
-        printf("Inserido\n");
-    }
+    setVid(&voo1, rand());
+    setHrDecolagem(&voo1, "13:30\0");
+    setHrPrevPouso(&voo1, "15:30\0");
+    setAeroportoDecolagem(&voo1, "AEP\0");
+    setAeroportoPrevPouso(&voo1, "PEA\0");
+    setPistaDecolagem(&voo1, 1);
+    setVid(&voo2, rand());
+    setHrDecolagem(&voo2, "14:00\0");
+    setHrPrevPouso(&voo2, "20:30\0");
+    setAeroportoDecolagem(&voo2, "PEA\0");
+    setAeroportoPrevPouso(&voo2, "ARE\0");
+    setPistaDecolagem(&voo2, 1);
+    setVid(&voo3, rand());
+    setHrDecolagem(&voo3, "12:00\0");
+    setHrPrevPouso(&voo3, "20:30\0");
+    setAeroportoDecolagem(&voo3, "PEA\0");
+    setAeroportoPrevPouso(&voo3, "ARE\0");
+    setPistaDecolagem(&voo3, 1);
+    erro1 = insereVoo(voo1, &listaVoo);
+    erro2 = insereVoo(voo2, &listaVoo);
+    erro3 = insereVoo(voo3, &listaVoo);
+    imprimeVoo(listaVoo);
+    printf("\n\n\n\n\n");
+    retorno = retornaVoo(&listaVoo, 1681692777);
+    printf("%d\n", retorno.vid);
+    printf("\n\n\n\n\n");
+    imprimeVoo(listaVoo);
+    retorno = procuraVoo(&listaVoo, 846930886);
+    printf("\n\n\n\n\n");
+    printf("%d\n", retorno.vid);
+    printf("\n\n\n\n\n");
     imprimeVoo(listaVoo);
     return 0;
 }

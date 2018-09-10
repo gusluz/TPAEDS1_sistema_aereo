@@ -54,14 +54,12 @@ int setPistaDecolagem(tadVoo* voo, int pistaDecolagem){
     voo->pistaDecolagem = pistaDecolagem;
     return 0;
 }
-int horasParaMinutos(char *horario){
-    int i,minutosTotal = 0;
-    for(i=0;i<5;i++){
+int horasParaMinutos(char horario[]){
+    int minutos, minuto;
+    for(int i=0;i<5;i++){
         horario[i] = horario[i] - 48;
     }
-    minutosTotal += (horario[0] * 10) * 60;
-    minutosTotal += horario[1] * 60;
-    minutosTotal += horario[3] * 10;
-    minutosTotal += horario[4];
-    return minutosTotal;
+    minuto = horario[3]*10 + horario[4];
+    minutos = minuto + (horario[0]*10 + horario[1])*60;
+    return minutos;
 }
