@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "tadVoo.c"
-#include "tadListaDeVoo.c"
+#include "tadListaDeVoo.h"
 
 int main() {
     //Inicializando 3 voos para inserção de exemplo.

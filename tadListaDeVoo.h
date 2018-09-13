@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "tadVoo.h"
 
 //Ponteiro apontador
 typedef struct tipoCelula *tipoApontador;
