@@ -20,6 +20,7 @@ void fazListaVazia(tadListaVoo* listaVoo); //Inicializar lista vazia
 int vazia(tadListaVoo listaVoo); //Verificar se a lista está vazia
 int insereVoo(tadVoo voo, tadListaVoo* listaVoo); //Inserir Voo na lista
 tadVoo retornaVoo(tadListaVoo* listaVoo, int vid); //Retirar voo da lista e retornar para o programa
+void inserirVooFinal(tadVoo x, tadListaVoo *Lista);
 tadVoo procuraVoo(tadListaVoo* listaVoo, int vid); //Procurar voo em lista
 void imprimeVoo(tadListaVoo listaVoo); //Imprimir voos da lista
 

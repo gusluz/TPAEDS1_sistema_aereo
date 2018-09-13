@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "tadListaDeVoo.h"
 
 //inicializa a lista encadeada(recebida como parâmetro) vazia
@@ -33,19 +34,17 @@ void imprimeVoo(tadListaVoo listaVoo){
 int insereVoo(tadVoo voo, tadListaVoo* listaVoo){
     tipoApontador posicao, novo; //Crio um ponteiro para posição em que deve ser inserido e um ponteiro para o novo item
     posicao = listaVoo->primeiro; //Posição começa do primeiro elemento(célula cabeça)
-    while(posicao->prox != NULL){
-            comp = strcmp(posicao->prox->voo.hrDecolagem, voo.hrDecolagem);
-            if(comp<=0){
-                novo = (tipoApontador) malloc(sizeof(tipoCelula)); //Aloco um espaço para minha nova célula para nova informação
-                novo->voo = voo; //Minha informação contida na célula será o voo recebido como parâmetro
-                novo->prox = posicao->prox; //Aponto meu ponteiro de prox(próximo) para o mesmo local em que meu antigo ponteiro
-                // da posição em que devo colocar apontava
-                posicao->prox = novo; //Aponto meu antigo ponteiro da posição em que devo colocar apontava, para o novo item da lista
-            }
-    //Enquanto meu ponteiro prox(próximo) não apontar para NULL E minha comparação de string(hora de decolagem
+    while(posicao->prox != NULL && strcmp(posicao->prox->voo.hrDecolagem, voo.hrDecolagem) <= 0){
+        //Enquanto meu ponteiro prox(próximo) não apontar para NULL E minha comparação de string(hora de decolagem
         // do voo contido na lista encadeada e do voo recebido como parâmetro) for menor do que 0, percorra a lista
         posicao = posicao->prox; //Incrementa meu ponteiro para o próximo elemento da lista
     }
+    novo = (tipoApontador) malloc(sizeof(tipoCelula)); //Aloco um espaço para minha nova célula para nova informação
+    novo->voo = voo; //Minha informação contida na célula será o voo recebido como parâmetro
+    novo->prox = posicao->prox; //Aponto meu ponteiro de prox(próximo) para o mesmo local em que meu antigo ponteiro
+    // da posição em que devo colocar apontava
+    posicao->prox = novo; //Aponto meu antigo ponteiro da posição em que devo colocar apontava, para o novo item da listacao->prox = novo; //Aponto meu antigo ponteiro da posição em que devo colocar apontava, para o novo item da lista
+//            }
     return 0;
 }
 
