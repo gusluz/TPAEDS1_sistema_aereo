@@ -1,9 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define TAMCHAR 6
+//Estrutura responsável pelo Tipo Abstrado de Dados Voo
 typedef struct {
     int vid;
-    char hrDecolagem[6], hrPrevPouso[6], aeroportoDecolagem[6], aeroportoPrevPouso[6];
+    char hrDecolagem[TAMCHAR], hrPrevPouso[TAMCHAR], aeroportoDecolagem[TAMCHAR], aeroportoPrevPouso[TAMCHAR];
     int pistaDecolagem;
 } tadVoo;
 
+//Protótipos de funções
 void inicializa(tadVoo* voo);
 int getVid(tadVoo* voo);
 int setVid(tadVoo* voo, int vid);
