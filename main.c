@@ -12,9 +12,12 @@ int geraVID(){
 int main() {
     //Inicializando 3 voos para inserção de exemplo.
     //Exemplificando implementação de tadVoo e tadListaDeVoo
-    tadVoo voo1, voo2, voo3, voo4, voobusca, voobusca2;
-    tadListaVoo listaVoo;
-
+//    tadVoo voo1, voo2, voo3, voo4, voo5, voobusca, voobusca2;
+//    tadListaVoo listaVoo;
+//    tadItemMatriz itemMatriz;
+    tadVoo voo5;
+    tadMatrizDeVoo matrizDeVoo;
+    /*
     int erro1, erro2, erro3, erro4, errobusca; //Retorno de erros em inserção
 
     //Inicializando Voos
@@ -22,6 +25,7 @@ int main() {
     inicializa(&voo2);
     inicializa(&voo3);
     inicializa(&voo4);
+    inicializa(&voo5);
     inicializa(&voobusca);
     inicializa(&voobusca2);
 
@@ -82,12 +86,27 @@ int main() {
     voobusca2 = procuraVoo(&listaVoo, 1804);
 
     printf("Item retirado da lista : -----------\n");
-    printGets(&voobusca);
+    imprimeGets(&voobusca);
 
     printf("Item encontrado da lista: -----------\n");
-    printGets(&voobusca2);
+    imprimeGets(&voobusca2);
     //Imprimindo Voos da Lista
     imprimeVoo(listaVoo);
-
+  */
+    //Matriz
+    inicializarTadMatrizDeVoo(&matrizDeVoo);
+    //Voo5
+    setVid(&voo5, geraVID());
+    setHrDecolagem(&voo5, "07:30\0");
+    setHrPrevPouso(&voo5, "15:30\0");
+    setAeroportoDecolagem(&voo5, "AEP\0");
+    setAeroportoPrevPouso(&voo5, "PEA\0");
+    setPistaDecolagem(&voo5, 1);
+    insereVooMatriz(&matrizDeVoo, voo5);
+    for(int i=0;i<24;i++){
+        for(int j=0;j<24;j++){
+            imprimeVoo(matrizDeVoo.matrizVoos[i][j].listaVoo);
+        }
+    }
     return 0;
 }

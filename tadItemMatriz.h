@@ -1,27 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "tadListaDeVoo.h"
+#include "tadItemMatriz.h"
+#define TAMMATRIZ 24
 
 typedef struct {
-    tadListaVoo listaVoo;
-    int numVoos;
-    char horarioAtualizacao[6];
-} tadItemMatriz;
+    tadItemMatriz matrizVoos[TAMMATRIZ][TAMMATRIZ];
+    char data[11];
+    int numTotVoos;
+    char atualizacaoHorario[6];
+} tadMatrizDeVoo;
 
-void inicializarTadItemMatriz(tadItemMatriz *itemMatriz);
-
-//GETs
-//Retorna a lista de Voo
-tadListaVoo getListaVoo(tadItemMatriz *itemMatriz);
-//Retorna o número de voos
-int getNumVoos(tadItemMatriz *itemMatriz);
-//Retorna o horário da última atualização
-char* getHorarioAtualizacao(tadItemMatriz *itemMatriz);
-
-//SETs
-//Seta a lista de voo e retorna 0 caso obteve sucesso
-int setListaVoo(tadItemMatriz *itemMatriz, tadListaVoo listaVoo);
-//Seta número de voos e retorna 0 caso obteve sucesso
-int setNumVoos(tadItemMatriz *itemMatriz, int numVoos);
-//Seta o horário da atualização de voo e retorna 0 caso obteve sucesso
-int setHorarioAtualizacao(tadItemMatriz *itemMatriz, char horaAtualizacao[]);
+void inicializarTadMatrizDeVoo(tadMatrizDeVoo* matrizDeVoo);
+int insereVooMatriz(tadMatrizDeVoo* matrizDeVoo, tadVoo voo);
+int converteHoras(char horario[]);

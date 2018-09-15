@@ -3,7 +3,7 @@
 #include <string.h>
 #include "tadListaDeVoo.h"
 
-void printGets(tadVoo *aux) {
+void imprimeGets(tadVoo *aux) {
     printf("VID: %d\n", getVid(aux)); //
     printf("Hora Decolagem: %s\n", getHrDecolagem(aux));
     printf("Hora Prevista para Pouso: %s\n", getHrPrevPouso(aux));
@@ -31,7 +31,7 @@ void imprimeVoo(tadListaVoo listaVoo) {
     tipoApontador aux; //Crio um ponteiro auxiliar para percorrer a lista
     aux = listaVoo.primeiro->prox; //Faço o ponteiro ser igual ao ponteiro prox do primeiro elemento da lista(célula cabeça)
     while (aux != NULL) { //Enquanto o ponteiro próx(próximo) não apontar para NULL
-        printGets(&aux->voo);
+        imprimeGets(&aux->voo);
         aux = aux->prox; //Incrementa meu ponteiro para o próximo elemento da lista
     }
 }
