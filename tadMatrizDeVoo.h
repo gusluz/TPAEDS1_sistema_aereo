@@ -10,6 +10,4 @@ typedef struct {
     char atualizacaoHorario[6];
 } tadMatrizDeVoo;
 
-void inicializarTadMatrizDeVoo(tadMatrizDeVoo* matrizDeVoo, tadItemMatriz *itemMatriz);
-int inserirVooMatriz(tadMatrizDeVoo* matrizDeVoo, tadVoo *voo, tadListaVoo *listaVoo, tadItemMatriz *itemMatriz);
-
+void inicializarTadMatrizDeVoo(tadMatrizDeVoo* matrizDeVoo);
