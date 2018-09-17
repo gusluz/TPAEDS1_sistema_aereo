@@ -11,3 +11,5 @@ typedef struct {
 } tadMatrizDeVoo;
 
 void inicializarTadMatrizDeVoo(tadMatrizDeVoo* matrizDeVoo);
+int insereVooMatriz(tadMatrizDeVoo* matrizDeVoo, tadVoo voo);
+int converteHoras(char horario[]);

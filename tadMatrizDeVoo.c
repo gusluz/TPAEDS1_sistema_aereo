@@ -22,6 +22,7 @@ int insereVooMatriz(tadMatrizDeVoo* matrizDeVoo, tadVoo voo) {
         horaDecolagem = converteHoras(voo.hrDecolagem);
         horaPrevPouso = converteHoras(voo.hrPrevPouso);
         matrizDeVoo->matrizVoos[horaDecolagem][horaPrevPouso].listaVoo = listaVoo;
+        matrizDeVoo->matrizVoos[horaDecolagem][horaPrevPouso].numVoos++;
         matrizDeVoo->numTotVoos++;
     }
     return 0;
