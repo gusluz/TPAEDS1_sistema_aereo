@@ -31,6 +31,7 @@ void menuSistema() {
     printf("k) Encontrar lista de voos mais recentemente alterada\n");
     printf("l) Encontrar lista de voos menos recentemente alterada\n");
     printf("m) Verificar se matriz é esparça\n");
+    printf("s) Sair do programa");
 }
 
 /**
